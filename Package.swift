@@ -32,7 +32,7 @@ let package = Package(
 
     .binaryTarget(
       name: "UnlimintSDK_Core",
-      url: "https://github.com/parvezunlimint/TestingPackage/releases/download/0.0.1/UnlimintSDK-Core.zip",
+      url: "https://github.com/parvezunlimint/TestingPackage/releases/download/1.0.0/UnlimintSDK-Core.zip",
       checksum: "596e4ddc16154c78da7c5c4a6f47e9c6b93c7106"
     )
   ],

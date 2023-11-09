@@ -33,7 +33,7 @@ let package = Package(
     .binaryTarget(
       name: "UnlimintSDK_Core",
       url: "https://github.com/parvezunlimint/TestingPackage/releases/download/1.0.0/UnlimintSDK-Core.zip",
-      checksum: "596e4ddc16154c78da7c5c4a6f47e9c6b93c7106"
+      checksum: "b54699064a6a5c9745e5b33d5f1258447e55dc230a0a8a04b9f71cb20e1dcabdec1bba9386f90337789f8d1a26f7915caeb2b4fb0aa5ffac94e274b436954bd8"
     )
   ],
   swiftLanguageVersions: [.v5]

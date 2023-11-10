@@ -15,7 +15,7 @@ let package = Package(
   products: [
     .library(
       name: "UnlimintSDK_Core",
-      targets: ["UnlimintSDK_Core"]
+      targets: ["UnlimintSDK_Core", "UnlimintSDK_Core_B"]
     )
   ],
   
@@ -26,8 +26,11 @@ let package = Package(
   
   targets: [
 
+    .target(
+        name: "UnlimintSDK_Core"
+     ),
     .binaryTarget(
-      name: "UnlimintSDK_Core",
+      name: "UnlimintSDK_Core_B",
       url: "https://github.com/parvezunlimint/TestingPackage/releases/download/1.0.0/UnlimintSDK-Core.zip",
       checksum: "2b33a0035c53af54aed4d53667a4efeb942458ad2dcb418c1a6bf61bf36fe51d"
 

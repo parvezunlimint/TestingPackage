@@ -8,33 +8,63 @@ let ALAMOFIRE_VERSION: PackageDescription.Version = "5.6.4"
 
 let UNLIMINT_CORE_VERSION: PackageDescription.Version = "2.0.1"
 
+//let package = Package(
+//    
+//  name: "UnlimintSDK_Core",
+//  platforms: [.iOS(.v14)],
+//  products: [
+//    .library(
+//      name: "UnlimintSDK_Core",
+//      targets: ["UnlimintSDK_CoreA", "UnlimintSDK_Core_B"]
+//    )
+//  ],
+//  
+//  dependencies: [
+//    .package(url: "https://github.com/Moya/Moya.git", .upToNextMajor(from: MOYA_VERSION)),
+//    .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: ALAMOFIRE_VERSION))
+//  ],
+//  
+//  targets: [
+//
+//    .target(
+//        name: "UnlimintSDK_CoreA"
+//     ),
+//    .binaryTarget(
+//      name: "UnlimintSDK_Core_B",
+//      url: "https://github.com/parvezunlimint/TestingPackage/releases/download/1.0.0/UnlimintSDK-Core.zip",
+//      checksum: "2b33a0035c53af54aed4d53667a4efeb942458ad2dcb418c1a6bf61bf36fe51d"
+//
+//    )
+//  ],
+//  swiftLanguageVersions: [.v5]
+//)
+
+
 let package = Package(
+    name: "MyLibrary",
+    platforms: [
+        .iOS(.v14)
+    ],
     
-  name: "UnlimintSDK_Core",
-  platforms: [.iOS(.v14)],
-  products: [
-    .library(
-      name: "UnlimintSDK_Core",
-      targets: ["UnlimintSDK_Core", "UnlimintSDK_Core_B"]
-    )
-  ],
-  
-  dependencies: [
-    .package(url: "https://github.com/Moya/Moya.git", .upToNextMajor(from: MOYA_VERSION)),
-    .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: ALAMOFIRE_VERSION))
-  ],
-  
-  targets: [
-
-    .target(
-        name: "UnlimintSDK_Core"
-     ),
-    .binaryTarget(
-      name: "UnlimintSDK_Core_B",
-      url: "https://github.com/parvezunlimint/TestingPackage/releases/download/1.0.0/UnlimintSDK-Core.zip",
-      checksum: "2b33a0035c53af54aed4d53667a4efeb942458ad2dcb418c1a6bf61bf36fe51d"
-
-    )
-  ],
-  swiftLanguageVersions: [.v5]
+    products: [
+        // Products define the executables and libraries a package produces, and make them visible to other packages.
+        .library(
+            name: "MyLibrary",
+            targets: ["SomeRemoteBinaryPackage"])
+    ],
+    
+    dependencies: [
+            .package(url: "https://github.com/Moya/Moya.git", .upToNextMajor(from: MOYA_VERSION)),
+            .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: ALAMOFIRE_VERSION))
+    ],
+    targets: [
+        
+        .binaryTarget(
+                name: "SomeRemoteBinaryPackage",
+                url: "https://github.com/parvezunlimint/TestingPackage/releases/download/1.0.0/UnlimintSDK-Core.zip",
+                checksum: "2b33a0035c53af54aed4d53667a4efeb942458ad2dcb418c1a6bf61bf36fe51d"
+            
+        )
+    ],
+    swiftLanguageVersions: [.v5]
 )

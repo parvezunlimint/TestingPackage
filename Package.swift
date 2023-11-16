@@ -208,8 +208,8 @@ let package = Package(
     
     .binaryTarget(
       name: "UnlimintSDK_Core",
-      url: "https://github.com/parvezunlimint/TestingPackage/releases/download/1.0.0/UnlimintSDK-Core.zip",
-      checksum: "2b33a0035c53af54aed4d53667a4efeb942458ad2dcb418c1a6bf61bf36fe51d"
+      url: "https://github.com/parvezunlimint/TestingPackage/releases/download/1.0.1/UnlimintSDK-Core.xcframework.zip",
+      checksum: "b2bef0998b9f8b71028289c686e54f6f018d82e16ae5734e592bd6fcedc86e7b"
     )
   ],
   swiftLanguageVersions: [.v5]

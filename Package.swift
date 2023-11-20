@@ -49,7 +49,7 @@ let package = Package(
     .target(
         name: "UnlimintSDK_SwiftUITarget",
         dependencies: [
-        .target(name: "UnlimintSDK_Core_Wrapper", condition: .when(platforms: [.iOS, .macCatalyst, .macOS, .tvOS])),
+        .target(name: "UnlimintSDK_SwiftUI_Wrapper", condition: .when(platforms: [.iOS, .macCatalyst, .macOS, .tvOS])),
         ],
           path: "UnlimintSDK_SwiftUI"
     ),
@@ -69,6 +69,24 @@ let package = Package(
         .linkedLibrary("z"),
       ]
     ),
+    
+    
+    
+    .target(
+          name: "UnlimintSDK_SwiftUI_Wrapper",
+          dependencies: [
+            .target(
+              name: "UnlimintSDK_SwiftUI",
+              condition: .when(platforms: [.iOS])
+            ),
+            .product(name: "Swinject", package: "Swinject"),
+            .product(name: "Moya", package: "Moya"),
+          ],
+          path: "UnlimintSDK_SwiftUI_Wrapper",
+          linkerSettings: [
+            .linkedLibrary("z"),
+          ]
+        ),
     
     
     .target(

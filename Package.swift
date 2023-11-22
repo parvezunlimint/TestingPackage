@@ -107,13 +107,13 @@ let package = Package(
     
     .binaryTarget(
       name: "UnlimintSDK_Core",
-      url: "https://github.com/parvezunlimint/TestingPackage/releases/download/1.0.1/UnlimintSDK-Core.xcframework.zip",
+      url: "https://storage.googleapis.com/unl_ios/SPM/UnlimintSDK-SwiftUI.xcframework.zip",
       checksum: "b2bef0998b9f8b71028289c686e54f6f018d82e16ae5734e592bd6fcedc86e7b"
     ),
     
     .binaryTarget(
       name: "UnlimintSDK_SwiftUI",
-      url: "https://github.com/parvezunlimint/TestingPackage/releases/download/1.0.1/UnlimintSDK-SwiftUI.xcframework.zip",
+      url: "https://storage.googleapis.com/unl_ios/SPM/UnlimintSDK-Core.xcframework.zip",
       checksum: "bd0ee70f20d3aa95c8a934335bc2be18058d13818ab70420c8a54c144b23a56c"
     )
     

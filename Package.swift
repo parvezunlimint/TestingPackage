@@ -2,15 +2,11 @@
 
 import PackageDescription
 
-
-
 let SWINJECT_VERSION: PackageDescription.Version = "2.8.0"
 let MOYA_VERSION: PackageDescription.Version = "15.0.3"
 let ALAMOFIRE_VERSION: PackageDescription.Version = "5.6.4"
-
 let UNLIMINT_CORE_VERSION: PackageDescription.Version = "2.0.1"
 let UNLIMINT_SWIFTUI_VERSION: PackageDescription.Version = "2.0.1"
-
 
 let package = Package(
     
@@ -38,20 +34,19 @@ let package = Package(
     .target(
       name: "UnlimintSDK_CoreTarget",
       dependencies: [
-        .target(name: "UnlimintSDK_Core_Wrapper", condition: .when(platforms: [.iOS, .macCatalyst, .macOS, .tvOS])),
-        .target(name: "Unlimint_Alamofire", condition: .when(platforms: [.iOS, .macCatalyst, .macOS, .tvOS]))
+        .target(name: "UnlimintSDK_Core_Wrapper", condition: .when(platforms: [.iOS])),
+        .target(name: "Unlimint_Alamofire", condition: .when(platforms: [.iOS]))
         
       ],
-      path: "UnlimintSDK_Core"
+      path: "SPM_UnlimintSDK_Core"
     ),
 
-    
     .target(
         name: "UnlimintSDK_SwiftUITarget",
         dependencies: [
-        .target(name: "UnlimintSDK_SwiftUI_Wrapper", condition: .when(platforms: [.iOS, .macCatalyst, .macOS, .tvOS])),
+        .target(name: "UnlimintSDK_SwiftUI_Wrapper", condition: .when(platforms: [.iOS])),
         ],
-          path: "UnlimintSDK_SwiftUI"
+          path: "SPM_UnlimintSDK_SwiftUI"
     ),
     
     .target(
@@ -70,8 +65,6 @@ let package = Package(
       ]
     ),
     
-    
-    
     .target(
           name: "UnlimintSDK_SwiftUI_Wrapper",
           dependencies: [
@@ -86,9 +79,7 @@ let package = Package(
           linkerSettings: [
             .linkedLibrary("z"),
           ]
-        ),
-    
-    
+     ),
     .target(
         name: "Unlimint_Alamofire",
         dependencies: [
